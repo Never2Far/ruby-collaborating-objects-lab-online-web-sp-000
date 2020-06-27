@@ -23,7 +23,7 @@ if filename[-5..0] == ".mp3"
 end
 
 def import
-  files
+  self.files
   @filenames.each {|filename|
     Song.new_by_filename(filename)
   }
