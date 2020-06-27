@@ -32,10 +32,9 @@ end
 
 def self.new_by_filename(filename)
   parsed_filename = filename.split(" - ")
-  song_name = parsed_filename[1]
-  Song.new(song_name)
-  song_name.artist_name = parsed_filename[0]
-  return song_name
+  new_song = Song.new(parsed_filename[1])
+  new_song.artist_name = parsed_filename[0]
+  return new_song
 
     # song = self.new(filename.split(" - ")[1])
 
