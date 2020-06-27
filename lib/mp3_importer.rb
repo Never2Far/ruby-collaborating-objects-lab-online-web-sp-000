@@ -15,8 +15,8 @@ end
 
 
 def files
-  Dir.each_child(`#{@path}/mp3s`) { |filename|
-if filename[-5..0] == ".mp3"
+  Dir.each_child(@path) { |filename|
+if filename[-4..-1] == ".mp3"
    @filenames << filename
  end
   }
