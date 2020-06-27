@@ -8,7 +8,7 @@ attr_accessor :path
 def initialize(path)
 
 @path = path
-@filenames = []
+@files = []
 
 end
 
@@ -17,14 +17,15 @@ end
 def files
   Dir.each_child(@path) { |filename|
 if filename[-4..-1] == ".mp3"
-   @filenames << filename
+   @files << filename
  end
   }
+  return @files
 end
 
 def import
   self.files
-  @filenames.each {|filename|
+  @files.each {|filename|
     Song.new_by_filename(filename)
   }
 end
